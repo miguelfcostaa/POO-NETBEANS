@@ -1,0 +1,40 @@
+
+import java.util.Scanner;
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author 35192
+ */
+public class Consigliere {
+    public Consigliere(){
+        int option = -1;
+        Scanner scanchoice = new Scanner(System.in);
+        while (option < 1 || option > 3) {
+            System.out.println("1- Expandir negócio:");
+            System.out.println("2- Mafia sitdown:");
+            System.out.println("3- Voltar.");
+            System.out.println("Escolha a opção:");
+            if (scanchoice.hasNextInt()) {
+                option = scanchoice.nextInt();
+            }
+        }
+        switch (option) {
+            case 1:
+                System.out.println("Expandir negócio:");
+                break;
+            case 2:
+                System.out.println("Mafia sitdown:");
+                break;
+            case 3:
+                System.out.println("Voltar.");
+                break;
+            default:
+                System.out.println("Opcao invalida");
+        }
+    }
+}
