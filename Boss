@@ -1,0 +1,49 @@
+
+import java.util.Scanner;
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author 35192
+ */
+public class Boss {
+    public Boss(){
+        int option = -1;
+        Scanner scanchoice = new Scanner(System.in);
+        while (option < 1 || option > 3) {
+            System.out.println("1- Recruta Soldier:");
+            System.out.println("2- Recruta CapoRegime:");
+            System.out.println("3- Recruta UnderBoss:");
+            System.out.println("4- Gera negócios para caporegime:");
+            System.out.println("5- Nomear consigllieri:");
+            System.out.println("Escolha a opção:");
+            if (scanchoice.hasNextInt()) {
+                option = scanchoice.nextInt();
+            }
+        }
+        switch (option) {
+            case 1:
+                System.out.println("Recruta Soldier:");
+                break;
+            case 2:
+                System.out.println("Recruta CapoRegime:");
+                break;
+            case 3:
+                System.out.println("Recruta UnderBoss:");
+                break;
+            case 4:
+                System.out.println("Gera negócios para caporegime:");
+                break;
+            case 5:
+                System.out.println("Nomear consigllieri:");
+                break;
+            default:
+                System.out.println("Opcao invalida");
+        }
+    }
+   
+}
