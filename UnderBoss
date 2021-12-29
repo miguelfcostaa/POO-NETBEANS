@@ -1,0 +1,43 @@
+
+import java.util.Scanner;
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author 35192
+ */
+public class UnderBoss {
+    public UnderBoss(){
+         int option = -1;
+        Scanner scanchoice = new Scanner(System.in);
+        while (option < 1 || option > 3) {
+            System.out.println("1- Libertar mafioso:");
+            System.out.println("2- Período contabilístico:");
+            System.out.println("3- Loyalty test:");
+            System.out.println("4- Voltar.");
+            System.out.println("Escolha a opção:");
+            if (scanchoice.hasNextInt()) {
+                option = scanchoice.nextInt();
+            }
+        }
+        switch (option) {
+            case 1:
+                System.out.println("Libertar mafioso:");
+                break;
+            case 2:
+                System.out.println("Período contabilístico:");
+                break;
+            case 3:
+                System.out.println("Loyalty test:");
+                break;
+            case 4:
+                System.out.println("Voltar.");
+            default:
+                System.out.println("Opcao invalida");
+        }
+    }
+}
