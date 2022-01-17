@@ -1,20 +1,10 @@
-
 import java.util.Scanner;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author 35192
- */
 public class UnderBoss {
-    public UnderBoss(){
+    public static void MenuUnderBoss(){
          int option = -1;
         Scanner scanchoice = new Scanner(System.in);
-        while (option < 1 || option > 3) {
+        while (option < 1 || option > 5) {
             System.out.println("1- Libertar mafioso:");
             System.out.println("2- Período contabilístico:");
             System.out.println("3- Loyalty test:");
