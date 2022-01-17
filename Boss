@@ -1,25 +1,16 @@
-
 import java.util.Scanner;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author 35192
- */
 public class Boss {
-    public Boss(){
+    public static void MenuBoss(){
         int option = -1;
         Scanner scanchoice = new Scanner(System.in);
-        while (option < 1 || option > 3) {
+        while (option < 1 || option > 6) {
             System.out.println("1- Recruta Soldier:");
             System.out.println("2- Recruta CapoRegime:");
             System.out.println("3- Recruta UnderBoss:");
             System.out.println("4- Gera negócios para caporegime:");
             System.out.println("5- Nomear consigllieri:");
+            System.out.println("6- Voltar.");
             System.out.println("Escolha a opção:");
             if (scanchoice.hasNextInt()) {
                 option = scanchoice.nextInt();
@@ -28,22 +19,51 @@ public class Boss {
         switch (option) {
             case 1:
                 System.out.println("Recruta Soldier:");
+                Mafia.MenuMafia();
+                Recruta("Soldier");
+                
+                Family.Menu();
                 break;
             case 2:
                 System.out.println("Recruta CapoRegime:");
+                Mafia.MenuMafia();
+                Recruta("CapoRegime");
+                
+                Family.Menu();
                 break;
             case 3:
                 System.out.println("Recruta UnderBoss:");
+                Mafia.MenuMafia();
+                Recruta("UnderBoss");
+                
+                Family.Menu();
                 break;
             case 4:
                 System.out.println("Gera negócios para caporegime:");
+                Mafia.MenuMafia();
+                
+                Family.Menu();
                 break;
             case 5:
                 System.out.println("Nomear consigllieri:");
+                Mafia.MenuMafia();
+                
+                Family.Menu();
                 break;
             default:
                 System.out.println("Opcao invalida");
         }
     }
-   
+    public static void Recruta(String b){
+        Scanner s = new Scanner(System.in);
+        System.out.println("Primeiro Nome:");
+        String primeiroNome = s.next();        
+        s = new Scanner(System.in);
+        System.out.println("Apelido:");
+        String ultimoNome = s.nextLine();
+        s = new Scanner(System.in);
+        System.out.println("ccld:");
+        int ccld = s.nextInt();
+        Pessoas a = new Pessoas (primeiroNome, ultimoNome , b ,ccld);
+    }
 }
