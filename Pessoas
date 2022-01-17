@@ -1,0 +1,65 @@
+
+import java.util.Random;
+import java.util.ArrayList;
+
+public class Pessoas {
+
+    private String nome;        //Primeiro nome
+    private String apelido;     //Ultimo nome
+    private String posto;       //Posto de soldier a boss
+    private int ccld;           // ccld unico de 8 digitos
+    private int lealdade;       //valor de 0 a 100
+    private int musculo;        //valor de 0 a 100
+    private int inteligência;   //valor de 0 a 100
+    private int estratega;      //valor de 0 a 100
+    private int carisma;        //valor de 0 a 100
+    Random rand = new Random();
+
+    private ArrayList<Pessoas> caporegime;
+    private ArrayList<Pessoas> soldier;
+
+    public Pessoas(String nome, String apelido, String posto, int ccld) {
+        this.nome = nome;
+        this.apelido = apelido;
+        this.posto = posto;
+        this.ccld = ccld;
+
+        this.lealdade = Random();
+        this.inteligência = Random();
+        this.estratega = Random();
+        this.musculo = Random();
+        this.carisma = Random();
+
+        if (posto == "Soldier") {
+            soldier = new ArrayList<Pessoas>();
+        } else if (posto == "Caporegime") {
+            caporegime = new ArrayList<Pessoas>();
+        }
+    }
+
+    public int Random() {
+        int n = rand.nextInt(100) + 1;
+        return n;
+    }
+
+    public String toString() {
+        String texto;
+        texto = "";
+        texto += "nome=" + nome;
+        texto += " apelido=" + apelido;
+        texto += " posto=" + posto;
+        texto += " ccld=" + ccld;
+        texto += " lealdade=" + lealdade;
+        texto += " musculo=" + musculo;
+        texto += " inteligência=" + inteligência;
+        texto += " estratega=" + estratega;
+        texto += " carisma=" + carisma + '}';
+        return texto;
+    }
+    public void addSoldier(Pessoas sol) {
+        soldier.add(sol);
+    }
+    public void addCapoRegime(Pessoas cap) {
+        caporegime.add(cap);
+    }
+}
