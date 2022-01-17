@@ -1,0 +1,46 @@
+
+import java.util.Scanner;
+
+public class Mafia {
+
+    public static void MenuMafia() {
+        int option = -1;
+        Scanner scanchoice = new Scanner(System.in);
+        while (option < 1 || option > 5) {
+            System.out.println("Escolhe a familia:");
+            System.out.println("1- Familia Bonanno");
+            System.out.println("2- Familia Colombo");
+            System.out.println("3- Familia Gambino");
+            System.out.println("4- Familia Genovese");
+            System.out.println("5- Familia Lucchese");
+            if (scanchoice.hasNextInt()) {
+                option = scanchoice.nextInt();
+            }
+        }
+        switch (option) {
+            case 1:
+                System.out.println("Familia Bonanno"); //joe bonanno
+                //bon.addPessoa();
+                break;
+            case 2:
+                System.out.println("Familia Colombo"); //joseph colombo
+                Colombo col = new Colombo();
+                break;
+            case 3:
+                System.out.println("Familia Gambino"); //Carlo Gambino
+                Gambino gam = new Gambino();
+                break;
+            case 4:
+                System.out.println("Familia Genevese"); //vito Genevese
+                Genevese gen = new Genevese();
+                break;
+            case 5:
+                System.out.println("Familia Lucchese");//Tommy lucchese
+                Lucchese luc = new Lucchese();
+                break;
+            default:
+                System.out.println("Opcao invalida");
+        }
+    }
+
+}
