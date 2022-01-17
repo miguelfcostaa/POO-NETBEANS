@@ -1,20 +1,10 @@
-
 import java.util.Scanner;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author 35192
- */
 public class Familia {
-    public Familia(){
+    public static void MenuFamilia(){
         int option = -1;
         Scanner scanchoice = new Scanner(System.in);
-        while (option < 1 || option > 3) {
+        while (option < 1 || option > 9) {
             System.out.println("1- Retrato de família:");
             System.out.println("2- Plano de negócios:");
             System.out.println("3- Mapa de custos:");
@@ -22,7 +12,7 @@ public class Familia {
             System.out.println("5- Obituário:");
             System.out.println("6- Encarcerados:");
             System.out.println("7- All out war:");
-            System.out.println("8- Sair da aplicação.");
+            System.out.println("8- Voltar.");
             System.out.println("Escolha a opção:");
             if (scanchoice.hasNextInt()) {
                 option = scanchoice.nextInt();
@@ -31,6 +21,7 @@ public class Familia {
         switch (option) {
             case 1:
                 System.out.println("Retrato de família:");
+                Mafia.MenuMafia();
                 break;
             case 2:
                 System.out.println("Plano de negócios:");
@@ -51,10 +42,14 @@ public class Familia {
                 System.out.println("All out war:");
                 break;
             case 8:
-                System.out.println("Sair da aplicação.");
+                System.out.println("Voltar.");
+                Family.Menu();
                 break;
             default:
                 System.out.println("Opcao invalida");
         }
+    }
+    public void Retrato(){
+        
     }
 }
