@@ -1,0 +1,35 @@
+
+import java.util.ArrayList;
+
+public class Bonanno extends Pessoas {
+
+    private ArrayList<Pessoas> people;
+    private String superior;
+
+    public Bonanno(String nome, String apelido, String posto, int ccld,String superior) {
+        super(nome,apelido,posto,ccld);
+        this.superior=superior;
+        people = new ArrayList<Pessoas>();
+    }
+
+    public void addPessoa(Pessoas pes) {
+        System.out.println("Adicionou pessoa");
+        people.add(pes);
+    }
+
+    public ArrayList<Pessoas> getPeople() {
+        return people;
+    }
+
+    public void setPeople(ArrayList<Pessoas> people) {
+        this.people = people;
+    }
+
+    public void retiraPessoa(int indice) {
+        if (indice >= 0 && indice < people.size()) {
+            people.remove(indice);
+        } else {
+            System.out.println("Indice incorreto");
+        }
+    }
+}
