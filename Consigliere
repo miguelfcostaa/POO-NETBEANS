@@ -1,17 +1,7 @@
-
 import java.util.Scanner;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author 35192
- */
 public class Consigliere {
-    public Consigliere(){
+    public static void MenuConsigliere(){
         int option = -1;
         Scanner scanchoice = new Scanner(System.in);
         while (option < 1 || option > 3) {
@@ -32,7 +22,7 @@ public class Consigliere {
                 break;
             case 3:
                 System.out.println("Voltar.");
-                break;
+                break;        
             default:
                 System.out.println("Opcao invalida");
         }
