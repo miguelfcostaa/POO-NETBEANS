@@ -5,7 +5,12 @@ public class Bonanno extends Pessoas {
 
     private ArrayList<Pessoas> people;
     private String superior;
-
+    
+    public  Bonanno(){
+        superior  = " ";
+        people = new ArrayList<Pessoas>();
+    }
+    
     public Bonanno(String nome, String apelido, String posto, int ccld,String superior) {
         super(nome,apelido,posto,ccld);
         this.superior=superior;
