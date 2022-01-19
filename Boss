@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Boss {
@@ -54,14 +55,12 @@ public class Boss {
     public static void Recruta(String b) {
         Pessoas pes = new Pessoas();
         int fam = Mafia.MenuMafia();
-        if (b=="Soldier"){
-            
-        }
-        else if (b=="capoRegime"){
-            
-        }
-        else if (b=="UnderBoss"){
-            
+        if (b == "Soldier") {
+
+        } else if (b == "capoRegime") {
+
+        } else if (b == "UnderBoss") {
+
         }
         Scanner s = new Scanner(System.in);
         System.out.println("Primeiro Nome:");
@@ -69,7 +68,7 @@ public class Boss {
         s = new Scanner(System.in);
         System.out.println("ccld:");
         int ccld = s.nextInt();
-        
+
         if (fam == 1) {
             String ultimoNome = "Bonanno";
             Pessoas a = new Pessoas(primeiroNome, ultimoNome, b, ccld);
@@ -86,5 +85,11 @@ public class Boss {
             String ultimoNome = "Lucchese";
             Pessoas a = new Pessoas(primeiroNome, ultimoNome, b, ccld);
         }
+    }
+
+    public void GeraNegCap() {
+    }
+
+    public void NomearCons() {
     }
 }
