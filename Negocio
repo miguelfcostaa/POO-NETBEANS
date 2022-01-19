@@ -1,29 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 
-/**
- *
- * @author death
- */
 public class Negocio {
+
     private int baseTri;
     private int rentabilidade;
     
-    
+    private String[] tipo = {"Contrabando","Assalto","Assasinato","Lavagem de dinheiro","Prostituição","Trafico de drogas"};
+
     public Negocio() {
         baseTri = 0;
         rentabilidade = 0;
 
-        
     }
-    public Negocio(int baseTri, int rentabilidade, String id_negocio){
+
+    public Negocio(int baseTri, int rentabilidade, String id_negocio) {
         this.baseTri = baseTri;
         this.rentabilidade = rentabilidade;
-        
+
     }
     
+    public String[] criaNegocio(int indice){
+        System.out.println(tipo[indice]);
+        return tipo;
+    }
+
     public int getBaseTri() {
         return baseTri;
     }
@@ -37,18 +36,21 @@ public class Negocio {
     }
 
     public void setRentabilidade(int rentabilidade) {
-        if (rentabilidade >= 100) rentabilidade = 100;
-        if (rentabilidade <= 0) rentabilidade = 0;
+        if (rentabilidade >= 100) {
+            rentabilidade = 100;
+        }
+        if (rentabilidade <= 0) {
+            rentabilidade = 0;
+        }
         this.rentabilidade = rentabilidade;
     }
-    
-    public int calculoRentabilidade(){ //de um só soldier
+
+    public int calculoRentabilidade() { //de um só soldier
         Pessoas p = new Pessoas();
-        p.getPeople();
-        rentabilidade = rentabilidade + p.getMusculo() + p.getInteligência() + p.getEstratega();
-        rentabilidade = rentabilidade/3;
+        int indice = 1;
+        rentabilidade = rentabilidade + p.getMusculo(indice) + p.getInteligência(indice) + p.getEstratega(indice);
+        rentabilidade = rentabilidade / 3;
         return rentabilidade;
     }
-    
-    
+
 }
