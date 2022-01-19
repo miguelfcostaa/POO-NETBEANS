@@ -1,7 +1,9 @@
+
 import java.util.Scanner;
 
 public class Consigliere {
-    public static void MenuConsigliere(){
+
+    public static void MenuConsigliere() {
         int option = -1;
         Scanner scanchoice = new Scanner(System.in);
         while (option < 1 || option > 3) {
@@ -22,9 +24,16 @@ public class Consigliere {
                 break;
             case 3:
                 System.out.println("Voltar.");
-                break;        
+                break;
             default:
                 System.out.println("Opcao invalida");
         }
     }
+
+    public void ExpandirNegocio() {
+    }
+
+    public void MafiaSitdown() {
+    }
+
 }
