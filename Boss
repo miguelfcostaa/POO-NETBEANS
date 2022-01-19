@@ -1,7 +1,8 @@
 import java.util.Scanner;
 
 public class Boss {
-    public static void MenuBoss(){
+
+    public static void MenuBoss() {
         int option = -1;
         Scanner scanchoice = new Scanner(System.in);
         while (option < 1 || option > 6) {
@@ -19,51 +20,71 @@ public class Boss {
         switch (option) {
             case 1:
                 System.out.println("Recruta Soldier:");
-                Mafia.MenuMafia();
                 Recruta("Soldier");
-                
+
                 Family.Menu();
                 break;
             case 2:
                 System.out.println("Recruta CapoRegime:");
-                Mafia.MenuMafia();
                 Recruta("CapoRegime");
-                
+
                 Family.Menu();
                 break;
             case 3:
                 System.out.println("Recruta UnderBoss:");
-                Mafia.MenuMafia();
                 Recruta("UnderBoss");
-                
+
                 Family.Menu();
                 break;
             case 4:
                 System.out.println("Gera negócios para caporegime:");
-                Mafia.MenuMafia();
-                
+
                 Family.Menu();
                 break;
             case 5:
                 System.out.println("Nomear consigllieri:");
-                Mafia.MenuMafia();
-                
+
                 Family.Menu();
                 break;
             default:
                 System.out.println("Opcao invalida");
         }
     }
-    public static void Recruta(String b){
+
+    public static void Recruta(String b) {
+        Pessoas pes = new Pessoas();
+        int fam = Mafia.MenuMafia();
+        if (b=="Soldier"){
+            
+        }
+        else if (b=="capoRegime"){
+            
+        }
+        else if (b=="UnderBoss"){
+            
+        }
         Scanner s = new Scanner(System.in);
         System.out.println("Primeiro Nome:");
-        String primeiroNome = s.next();        
-        s = new Scanner(System.in);
-        System.out.println("Apelido:");
-        String ultimoNome = s.nextLine();
+        String primeiroNome = s.next();
         s = new Scanner(System.in);
         System.out.println("ccld:");
         int ccld = s.nextInt();
-        Pessoas a = new Pessoas (primeiroNome, ultimoNome , b ,ccld);
+        
+        if (fam == 1) {
+            String ultimoNome = "Bonanno";
+            Pessoas a = new Pessoas(primeiroNome, ultimoNome, b, ccld);
+        } else if (fam == 2) {
+            String ultimoNome = "Colombo";
+            Pessoas a = new Pessoas(primeiroNome, ultimoNome, b, ccld);
+        } else if (fam == 3) {
+            String ultimoNome = "Gambino";
+            Pessoas a = new Pessoas(primeiroNome, ultimoNome, b, ccld);
+        } else if (fam == 4) {
+            String ultimoNome = "Genevese";
+            Pessoas a = new Pessoas(primeiroNome, ultimoNome, b, ccld);
+        } else if (fam == 5) {
+            String ultimoNome = "Lucchese";
+            Pessoas a = new Pessoas(primeiroNome, ultimoNome, b, ccld);
+        }
     }
 }
