@@ -4,22 +4,23 @@ import java.util.Scanner;
 public class Family {
     
     public static void main(String[] args) {
-        Bonanno bon = new Bonanno("","","",0,"");
-        Colombo col = new Colombo();
-        Gambino gam = new Gambino();
-        Genevese gen = new Genevese();
-        Lucchese luc = new Lucchese();
-        
+        Pessoas bon = new Pessoas();
+        //Colombo col = new Colombo();
+        //Gambino gam = new Gambino();
+        //Genevese gen = new Genevese();
+        //Lucchese luc = new Lucchese();
+        Pessoas bonanno2 = new Pessoas("Miguel","Bonanno","Soldier",12000000);
+        bon.addPessoa(bonanno2);
         Pessoas bonanno = new Pessoas("Joe", "Bonnano", "Boss", 10000000);
         bon.addPessoa(bonanno);
         Pessoas colombo = new Pessoas("Joseph", "Colombo", "Boss", 20000000);
-        col.addPessoa(colombo);
+        //col.addPessoa(colombo);
         Pessoas gambino = new Pessoas("Carlo", "Gambino", "Boss", 30000000);
-        gam.addPessoa(gambino);
+        //gam.addPessoa(gambino);
         Pessoas genevese = new Pessoas("Vito", "Genevese", "Boss", 40000000);
-        gen.addPessoa(genevese);
+        //gen.addPessoa(genevese);
         Pessoas lucchese = new Pessoas("Tommy", "Lucchese", "Boss", 50000000);
-        luc.addPessoa(lucchese);
+        //luc.addPessoa(lucchese);
         bon.getPeople();
         
         Menu();
@@ -60,6 +61,7 @@ public class Family {
                 break;
             default:
                 System.out.println("---Opcao invalida----");
+                break;
         }
     }
 }
