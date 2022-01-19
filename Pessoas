@@ -93,34 +93,45 @@ public class Pessoas {
     }
     
     public int getCcld(int indice) {
-        int num=0;
-        people.get(indice);
-        return num;
+        Pessoas p = new Pessoas();
+        p=people.get(indice);
+        System.out.println(p);
+        this.ccld=p.ccld;
+        return ccld;
     }
 
-    public int getLealdade() {
+    public int getLealdade(int indice) {
+        Pessoas p = new Pessoas();
+        p.getPeople(indice);
+        this.lealdade=p.lealdade;
         return lealdade;
     }
 
-    public int getMusculo() {
+    public int getMusculo(int indice) {
+        Pessoas p = new Pessoas();
+        p.getPeople(indice);
+        this.musculo=p.musculo;
         return musculo;
     }
 
-    public int getInteligência() {
+    public int getInteligência(int indice) {
+        Pessoas p = new Pessoas();
+        p.getPeople(indice);
+        this.inteligência=p.inteligência;
         return inteligência;
     }
 
-    public int getEstratega() {
+    public int getEstratega(int indice) {
+        Pessoas p = new Pessoas();
+        p.getPeople(indice);
+        this.estratega=p.estratega;
         return estratega;
     }
 
-    public int getCarisma() {
+    public int getCarisma(int indice) {
+        Pessoas p = new Pessoas();
+        p.getPeople(indice);
+        this.carisma=p.carisma;
         return carisma;
-    }
-    
-    public void getPeople(String nome, String apelido) {
-        if (this.apelido == apelido){
-            
-        }
     }   
 } 
