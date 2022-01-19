@@ -30,4 +30,11 @@ public class UnderBoss {
                 System.out.println("Opcao invalida");
         }
     }
+    public void loyaltyTest(int ccld) {
+        Pessoas p = new Pessoas();
+        p.getPeople();
+        if (p.getLealdade() < 50) {
+            p.retiraPessoa(ccld);
+        }
+    }
 }
