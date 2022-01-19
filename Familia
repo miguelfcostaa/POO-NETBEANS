@@ -2,8 +2,8 @@
 import java.util.Scanner;
 
 public class Familia {
-    
-    public static void MenuFamilia(){
+
+    public static void MenuFamilia() {
         int option = -1;
         Scanner scanchoice = new Scanner(System.in);
         while (option < 1 || option > 9) {
@@ -23,7 +23,8 @@ public class Familia {
         switch (option) {
             case 1:
                 System.out.println("Retrato de família:");
-                Mafia.MenuMafia();
+                Retrato();
+                //Mafia.MenuMafia();
                 break;
             case 2:
                 System.out.println("Plano de negócios:");
@@ -51,7 +52,29 @@ public class Familia {
                 System.out.println("Opcao invalida");
         }
     }
-    public void Retrato(){
-        
+
+    public static void Retrato() {
+
     }
+
+    public void PlanoNegocios() {
+
+    }
+
+    public void MapaCustos() {
+
+    }
+
+    public void EspiritoEquipa() {
+    }
+
+    public void Obituario() {
+    }
+
+    public void Encarcerados() {
+    }
+
+    public void AllOfWar() {
+    }
+
 }
