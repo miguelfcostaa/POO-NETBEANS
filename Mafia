@@ -1,9 +1,8 @@
-
 import java.util.Scanner;
 
 public class Mafia {
 
-    public static void MenuMafia() {
+    public static int MenuMafia() {
         int option = -1;
         Scanner scanchoice = new Scanner(System.in);
         while (option < 1 || option > 5) {
@@ -20,27 +19,22 @@ public class Mafia {
         switch (option) {
             case 1:
                 System.out.println("Familia Bonanno"); //joe bonanno
-                //bon.addPessoa();
-                break;
+                return 1;
             case 2:
                 System.out.println("Familia Colombo"); //joseph colombo
-                Colombo col = new Colombo();
-                break;
+                return 2;
             case 3:
                 System.out.println("Familia Gambino"); //Carlo Gambino
-                Gambino gam = new Gambino();
-                break;
+                return 3;
             case 4:
                 System.out.println("Familia Genevese"); //vito Genevese
-                Genevese gen = new Genevese();
-                break;
+                return 4;
             case 5:
                 System.out.println("Familia Lucchese");//Tommy lucchese
-                Lucchese luc = new Lucchese();
-                break;
+                return 5;
             default:
                 System.out.println("Opcao invalida");
         }
+        return 0;
     }
-
 }
