@@ -3,6 +3,9 @@ import java.util.Scanner;
 
 public class Familia {
 
+    private int prob_policiaAtuar;
+    private int pagamento_policia;
+
     public static void MenuFamilia() {
         int option = -1;
         Scanner scanchoice = new Scanner(System.in);
@@ -77,4 +80,7 @@ public class Familia {
     public void AllOfWar() {
     }
 
+    public void folhaPagamentos() {
+        prob_policiaAtuar = prob_policiaAtuar * pagamento_policia / 100;
+    }
 }
