@@ -1,5 +1,6 @@
 
 import java.util.Scanner;
+import java.util.*;
 
 public class Consigliere {
 
@@ -18,6 +19,7 @@ public class Consigliere {
         switch (option) {
             case 1:
                 System.out.println("Expandir negócio:");
+                ExpandirNegocio();
                 break;
             case 2:
                 System.out.println("Mafia sitdown:");
@@ -29,11 +31,19 @@ public class Consigliere {
                 System.out.println("Opcao invalida");
         }
     }
-
-    public void ExpandirNegocio() {
+    
+    /*aumenta o valor base tributável de um dado negócio em função do traço de personalidade estratega do consigliere*/
+    public static void ExpandirNegocio() {
+        Pessoas p = new Pessoas();
+        
     }
-
+    
+    /*mediação de conflitos em que os custos fixos envolvendo várias famílias devem ser 
+    reduzidos ou eliminados em função do traço de personalidade estratega do consigliere*/  
     public void MafiaSitdown() {
+        
+        
+        
     }
 
 }
