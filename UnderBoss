@@ -1,8 +1,10 @@
+
 import java.util.Scanner;
 
 public class UnderBoss {
-    public static void MenuUnderBoss(){
-         int option = -1;
+
+    public static void MenuUnderBoss() {
+        int option = -1;
         Scanner scanchoice = new Scanner(System.in);
         while (option < 1 || option > 5) {
             System.out.println("1- Libertar mafioso:");
@@ -30,11 +32,13 @@ public class UnderBoss {
                 System.out.println("Opcao invalida");
         }
     }
-    public void loyaltyTest(int ccld) {
-        Pessoas p = new Pessoas();
-        p.getPeople();
-        if (p.getLealdade() < 50) {
-            p.retiraPessoa(ccld);
-        }
+
+    public void LibertaMafio() {
+    }
+
+    public void PeriodoConta() {
+    }
+
+    public void LoyaltyTest() {
     }
 }
