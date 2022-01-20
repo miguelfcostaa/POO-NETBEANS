@@ -1,5 +1,7 @@
-import java.util.Random;
-import java.util.ArrayList;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
 public class Pessoas {
 
@@ -12,7 +14,8 @@ public class Pessoas {
     private int inteligência;   //valor de 0 a 100
     private int estratega;      //valor de 0 a 100
     private int carisma;        //valor de 0 a 100
-    private ArrayList<Pessoas> people;
+    private String superior;
+    private static ArrayList<Pessoas> people;
     
     Random rand = new Random();
     
@@ -21,6 +24,7 @@ public class Pessoas {
         apelido = " ";
         posto = " ";
         ccld = 00000000;
+        superior = "";
         lealdade = 0;
         musculo = 0;
         inteligência = 0;
@@ -34,7 +38,7 @@ public class Pessoas {
         this.apelido = apelido;
         this.posto = posto;
         this.ccld = ccld;
-
+        this.superior = superior;
         this.lealdade = Random();
         this.inteligência = Random();
         this.estratega = Random();
@@ -49,26 +53,56 @@ public class Pessoas {
         this.musculo = musculo;
         people = new ArrayList<Pessoas>();
     }
-      
+    
+    public static void readFicheiro() throws IOException{
+        BufferedReader input = null;
+        try {
+            input = new BufferedReader(new FileReader("Bonnano.txt"));
+            String nm;
+            while ((nm = input.readLine()) != null) {                 
+            }
+        }
+        finally {
+            if (input != null) {
+                input.close();
+            }
+            
+        }
+    }
+    
+    public Pessoas (String nome ,String apelido ,String posto,int ccld ,int lealdade ,int musculo ,int inteligência ,int estratega ,int carisma ,String superior) {
+        this.nome = nome;
+        this.apelido = apelido;
+        this.posto = posto;
+        this.ccld = ccld;
+        this.lealdade = lealdade;
+        this.musculo = musculo;
+        this.inteligência = inteligência;
+        this.estratega = estratega;
+        this.carisma = carisma;
+        this.superior = superior;
+        people = new ArrayList<Pessoas>();
+    }
+    
     public void addPessoa(Pessoas pes) {
         System.out.println("Adicionou pessoa");
         people.add(pes);
+        System.out.println(pes);
     }
-
+    
+    public void retiraPessoa(int indice) {
+        people.remove(indice);
+    }
+    
     public Pessoas getPeople(int indice) {
         return people.get(indice);
+    }
+    public static ArrayList<Pessoas> getPeople(){
+        return people;
     }
 
     public void setPeople(ArrayList<Pessoas> people) {
         this.people = people;
-    }
-
-    public void retiraPessoa(int indice) {
-        if (indice >= 0 && indice < people.size()) {
-            people.remove(indice);
-        } else {
-            System.out.println("Indice incorreto");
-        }
     }
     
     public int Random() {
@@ -134,4 +168,5 @@ public class Pessoas {
         this.carisma=p.carisma;
         return carisma;
     }   
+   
 } 
