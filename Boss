@@ -1,9 +1,9 @@
-
-import java.util.Scanner;
+import java.util.*;
 
 public class Boss {
 
-    public static void MenuBoss() {
+    public void MenuBoss() {
+        Familia fam=new Familia();
         int option = -1;
         Scanner scanchoice = new Scanner(System.in);
         while (option < 1 || option > 6) {
@@ -23,38 +23,44 @@ public class Boss {
                 System.out.println("Recruta Soldier:");
                 Recruta("Soldier");
 
-                Family.Menu();
+                fam.Menu();
                 break;
             case 2:
                 System.out.println("Recruta CapoRegime:");
                 Recruta("CapoRegime");
 
-                Family.Menu();
+                fam.Menu();
                 break;
             case 3:
                 System.out.println("Recruta UnderBoss:");
                 Recruta("UnderBoss");
 
-                Family.Menu();
+                fam.Menu();
                 break;
             case 4:
                 System.out.println("Gera negócios para caporegime:");
 
-                Family.Menu();
+                fam.Menu();
                 break;
             case 5:
                 System.out.println("Nomear consigllieri:");
 
-                Family.Menu();
+                fam.Menu();
                 break;
+            case 6:
+                System.out.println("Voltar");
+                fam.Menu();
             default:
                 System.out.println("Opcao invalida");
         }
     }
 
-    public static void Recruta(String b) {
+    public void Recruta(String b) {
         Pessoas pes = new Pessoas();
-        int fam = Mafia.MenuMafia();
+        Mafia maf = new Mafia();
+        
+        int fam = maf.MenuMafia();
+        
         if (b == "Soldier") {
 
         } else if (b == "capoRegime") {
