@@ -1,12 +1,9 @@
-import java.io.*;
-import java.util.Scanner;
-import java.io.FileNotFoundException;
-
 public class Family {
     
-    public static void main(String[] args) throws FileNotFoundException, IOException {
+    public static void main(String[] args) {
         Pessoas bon = new Pessoas();
-        bon.readFicheiro();
+        Familia fam = new Familia();
+        
         Pessoas bonanno2 = new Pessoas("Miguel","Bonanno","Soldier",12000000);
         bon.addPessoa(bonanno2);
         Pessoas bonanno = new Pessoas("Joe", "Bonnano", "Boss", 10000000);
@@ -19,47 +16,10 @@ public class Family {
         bon.addPessoa(genevese);
         Pessoas lucchese = new Pessoas("Tommy", "Lucchese", "Boss", 50000000);
         bon.addPessoa(lucchese);
-        System.out.println(bon.getPeople());
-        Menu();
-    }
-    
-    public static void Menu() {
-        int option = -1;
-        Scanner scanchoice = new Scanner(System.in);
-        while (option < 1 || option > 5) {
-            System.out.println("---------------");
-            System.out.println("Escolhe o menu: ");
-            System.out.println("1- Boss:");
-            System.out.println("2- UnderBoss:");
-            System.out.println("3- Consigliere:");
-            System.out.println("4- Familia:");
-            System.out.println("5- Voltar.");
-            System.out.println("Escolha a opção:");
-            if (scanchoice.hasNextInt()) {
-                option = scanchoice.nextInt();
-            }
-        }
-        switch (option) {
-            case 1:
-                System.out.println("----Boss----");
-                Boss.MenuBoss();            
-                break;
-            case 2:
-                System.out.println("----UnderBoss----");
-                UnderBoss.MenuUnderBoss();
-                break;
-            case 3:
-                System.out.println("----Consigliere----");
-                Consigliere.MenuConsigliere();
-                break;
-            case 4:
-                System.out.println("----Familia----");
-                Familia.MenuFamilia();
-                break;
-            default:
-                System.out.println("---Opcao invalida----");
-                break;
-        }    
+        bon.comparaApelido("Bonnano");
+        System.out.println(bon.getApelido(2));
+        
+        fam.Menu();
     }
     
 }
