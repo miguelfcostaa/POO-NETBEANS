@@ -1,9 +1,8 @@
+import java.util.*;
 
-import java.util.Scanner;
-
-public class UnderBoss {
-
-    public static void MenuUnderBoss() {
+public class UnderBoss{
+    private Pessoas pessoa;
+    public void MenuUnderBoss() {
         int option = -1;
         Scanner scanchoice = new Scanner(System.in);
         while (option < 1 || option > 5) {
@@ -19,12 +18,15 @@ public class UnderBoss {
         switch (option) {
             case 1:
                 System.out.println("Libertar mafioso:");
+                pessoa = new Pessoas();
+                System.out.println(pessoa.getPeople(1));
                 break;
             case 2:
                 System.out.println("Período contabilístico:");
                 break;
             case 3:
                 System.out.println("Loyalty test:");
+                LoyaltyTest();
                 break;
             case 4:
                 System.out.println("Voltar.");
@@ -40,5 +42,27 @@ public class UnderBoss {
     }
 
     public void LoyaltyTest() {
+        Mafia maf =new Mafia();
+        int fam = maf.MenuMafia();
+        String n = "";
+        String a = "";
+        
+        if (fam == 1) {
+            a = "Bonanno";
+        } else if (fam == 2) {
+            a = "Colombo";
+        } else if (fam == 3) {
+            a = "Gambino";
+        } else if (fam == 4) {
+            a = "Genevese";
+        } else if (fam == 5) {
+            a = "Lucchese";
+        }
+        for(int i=0;i<5;i++){
+            //n = getApelido(i);
+            if (n == a) {//Se o apelido for igual ao da familia escolhida
+                
+            }
+        } 
     }
 }
