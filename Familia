@@ -1,12 +1,50 @@
-
-import java.util.Scanner;
+import java.util.*;
 
 public class Familia {
+    
+    public void Menu() {
+        Boss boss = new Boss();
+        Consigliere con =new Consigliere();
+        UnderBoss und=new UnderBoss();
+        int option = -1;
+        Scanner scanchoice = new Scanner(System.in);
+        while (option < 1 || option > 5) {
+            System.out.println("---------------");
+            System.out.println("Escolhe o menu: ");
+            System.out.println("1- Boss:");
+            System.out.println("2- UnderBoss:");
+            System.out.println("3- Consigliere:");
+            System.out.println("4- Familia:");
+            System.out.println("5- Voltar.");
+            System.out.println("Escolha a opção:");
+            if (scanchoice.hasNextInt()) {
+                option = scanchoice.nextInt();
+            }
+        }
+        switch (option) {
+            case 1:
+                System.out.println("----Boss----");
+                boss.MenuBoss();
+                break;
+            case 2:
+                System.out.println("----UnderBoss----");
+                und.MenuUnderBoss();
+                break;
+            case 3:
+                System.out.println("----Consigliere----");
+                con.MenuConsigliere();
+                break;
+            case 4:
+                System.out.println("----Familia----");
+                MenuFamilia();
+                break;
+            default:
+                System.out.println("---Opcao invalida----");
+                break;
+        }
+    }
 
-    private int prob_policiaAtuar;
-    private int pagamento_policia;
-
-    public static void MenuFamilia() {
+    public void MenuFamilia() {
         int option = -1;
         Scanner scanchoice = new Scanner(System.in);
         while (option < 1 || option > 9) {
@@ -49,14 +87,14 @@ public class Familia {
                 break;
             case 8:
                 System.out.println("Voltar.");
-                Family.Menu();
+                Menu();
                 break;
             default:
                 System.out.println("Opcao invalida");
         }
     }
 
-    public static void Retrato() {
+    public void Retrato() {
 
     }
 
@@ -80,7 +118,4 @@ public class Familia {
     public void AllOfWar() {
     }
 
-    public void folhaPagamentos() {
-        prob_policiaAtuar = prob_policiaAtuar * pagamento_policia / 100;
-    }
 }
