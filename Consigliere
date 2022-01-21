@@ -1,10 +1,8 @@
-
-import java.util.Scanner;
 import java.util.*;
 
 public class Consigliere {
 
-    public static void MenuConsigliere() {
+    public void MenuConsigliere() {
         int option = -1;
         Scanner scanchoice = new Scanner(System.in);
         while (option < 1 || option > 3) {
@@ -19,7 +17,6 @@ public class Consigliere {
         switch (option) {
             case 1:
                 System.out.println("Expandir negócio:");
-                ExpandirNegocio();
                 break;
             case 2:
                 System.out.println("Mafia sitdown:");
@@ -31,19 +28,11 @@ public class Consigliere {
                 System.out.println("Opcao invalida");
         }
     }
-    
-    /*aumenta o valor base tributável de um dado negócio em função do traço de personalidade estratega do consigliere*/
-    public static void ExpandirNegocio() {
-        Pessoas p = new Pessoas();
-        
+
+    public void ExpandirNegocio() {
     }
-    
-    /*mediação de conflitos em que os custos fixos envolvendo várias famílias devem ser 
-    reduzidos ou eliminados em função do traço de personalidade estratega do consigliere*/  
+
     public void MafiaSitdown() {
-        
-        
-        
     }
 
 }
