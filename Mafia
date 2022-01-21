@@ -1,8 +1,8 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Mafia {
 
-    public static int MenuMafia() {
+    public int MenuMafia() {
         int option = -1;
         Scanner scanchoice = new Scanner(System.in);
         while (option < 1 || option > 5) {
