@@ -96,18 +96,39 @@ public class Pessoas {
         return texto;
     }
     
-    public boolean comparaApelido(String apelido) {
+    public int getIndice(Pessoas nome){
+        int pos = people.indexOf(nome);
+        //System.out.println(pos);
+        return pos;
+    }
+    
+    public boolean comparaPosto (String posto) {
         boolean verificado = false;
         for(int i=0; i<people.size(); i++) {
-            if(getApelido(i).equals(apelido)) {
-                System.out.println(getApelido(i));
+            if(getApelido(i).equals(posto)) {
                 verificado = true;
+                break;
             }
             else {
                 verificado = false;
             }
         }
-        System.out.println(verificado);
+        //System.out.println(verificado);
+        return verificado;
+    }
+    
+    public boolean comparaApelido (String apelido) {
+        boolean verificado = false;
+        for(int i=0; i<people.size(); i++) {
+            if(getApelido(i).equals(apelido)) {
+                verificado = true;
+                break;
+            }
+            else {
+                verificado = false;
+            }
+        }
+        //System.out.println(verificado);
         return verificado;
     }
     
@@ -160,6 +181,21 @@ public class Pessoas {
         this.apelido=p.apelido;
         return apelido;
     }
+    
+    public String getNome(int indice){
+        Pessoas p =new Pessoas();
+        p=people.get(indice);
+        this.nome=p.nome;
+        return nome;
+    }
+    
+    public String getPosto(int indice){
+        Pessoas p =new Pessoas();
+        p=people.get(indice);
+        this.posto=p.posto;
+        return posto;
+    }
+    
     /*
     public String getSuperior(int indice){
         Pessoas p = new Pessoas();
@@ -167,14 +203,4 @@ public class Pessoas {
         this.superior=superior;
         return superior;
     }*/
-    public void teste(){
-        Pessoas bon = new Pessoas();
-        bon.getCcld(1);
-        bon.getApelido(1);
-        bon.getCarisma(1);
-        bon.getEstratega(1);
-        bon.getInteligência(1);
-        bon.getLealdade(1);
-        bon.getMusculo(1);
-    }
 } 
