@@ -1,8 +1,8 @@
 import java.util.*;
 import java.util.Scanner;
 
-public class Boss extends Pessoas{
-
+public class Boss extends Pessoas {
+    
     public void MenuBoss() {
         Familia fam=new Familia();
         int option = -1;
@@ -45,6 +45,7 @@ public class Boss extends Pessoas{
                 break;
             case 5:
                 System.out.println("Nomear consigllieri:");
+                System.out.println(getPeople());
                 MenuNomearCons();
                 //fam.Menu();
                 break;
@@ -118,7 +119,7 @@ public class Boss extends Pessoas{
                 System.out.println(n +" - Pessoa: " + getNome(i) + "      Posto: " + getPosto(i));
                 n++;
             }
-            int m = n + 1;
+            int m = 1 + n;
             System.out.println( m + "- Voltar.");
             System.out.println("Qual pertende escolher: ");
             if (scanchoice.hasNextInt()) {
@@ -129,7 +130,8 @@ public class Boss extends Pessoas{
                     System.out.println(n + "Pessoa = " + getNome(1) + "Apelido = " + getApelido(1));    
                     break;
                 case 2:
-                    System.out.println(n + "Pessoa = " + getNome(2) + "Apelido = " + getApelido(2));    
+                    Familia fam = new Familia();
+                    fam.Menu();
                     break;
                 default:
                     System.out.println("Opcao invalida");    
