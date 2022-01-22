@@ -12,7 +12,7 @@ public class Pessoas {
     private int estratega;      //valor de 0 a 100
     private int carisma;        //valor de 0 a 100
     private String superior;
-    private ArrayList<Pessoas> people;
+    private ArrayList<Pessoas> people = new ArrayList<Pessoas>();
     
     Random rand = new Random();
     
@@ -26,7 +26,7 @@ public class Pessoas {
         inteligência = 0;
         estratega = 0;
         carisma = 0;
-        people = new ArrayList<Pessoas>();
+        //people = new ArrayList<Pessoas>();
     }
     
     public Pessoas(String nome, String apelido, String posto, int ccld) {
@@ -40,14 +40,14 @@ public class Pessoas {
         this.estratega = Random();
         this.musculo = Random();
         this.carisma = Random();
-        people = new ArrayList<Pessoas>();
+        //people = new ArrayList<Pessoas>();
     }
     
     public Pessoas(int inteligência,int estratega,int musculo) {
         this.inteligência = inteligência;
         this.estratega = estratega;
         this.musculo = musculo;
-        people = new ArrayList<Pessoas>();
+        //people = new ArrayList<Pessoas>();
     }
     
     public ArrayList<Pessoas> getPeople(){
