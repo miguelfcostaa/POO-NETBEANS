@@ -1,3 +1,4 @@
+
 import java.util.*;
 
 public class Pessoas {
@@ -12,10 +13,12 @@ public class Pessoas {
     private int estratega;      //valor de 0 a 100
     private int carisma;        //valor de 0 a 100
     private String superior;
-    private ArrayList<Pessoas> people = new ArrayList<Pessoas>();
-    
+    private static ArrayList<Pessoas> people = new ArrayList<Pessoas>();
+    private static ArrayList<Pessoas> obituario = new ArrayList<Pessoas>();
+    private static ArrayList<Pessoas> presos = new ArrayList<Pessoas>();
+
     Random rand = new Random();
-    
+
     public Pessoas() {
         nome = " ";
         apelido = " ";
@@ -26,9 +29,8 @@ public class Pessoas {
         inteligência = 0;
         estratega = 0;
         carisma = 0;
-        //people = new ArrayList<Pessoas>();
     }
-    
+
     public Pessoas(String nome, String apelido, String posto, int ccld) {
         this.nome = nome;
         this.apelido = apelido;
@@ -40,23 +42,34 @@ public class Pessoas {
         this.estratega = Random();
         this.musculo = Random();
         this.carisma = Random();
-        //people = new ArrayList<Pessoas>();
     }
-    
-    public Pessoas(int inteligência,int estratega,int musculo) {
+
+    public Pessoas(int inteligência, int estratega, int musculo) {
         this.inteligência = inteligência;
         this.estratega = estratega;
         this.musculo = musculo;
-        //people = new ArrayList<Pessoas>();
     }
-    
-    public ArrayList<Pessoas> getPeople(){
+
+    public Pessoas(String nome, String apelido, String posto, int ccld, String superior, int leal, int smart, int estra, int musc, int cari) {
+        this.nome = nome;
+        this.apelido = apelido;
+        this.posto = posto;
+        this.ccld = ccld;
+        this.superior = superior;
+
+        this.lealdade = leal;
+        this.inteligência = smart;
+        this.estratega = estra;
+        this.musculo = musc;
+        this.carisma = cari;
+    }
+
+    public ArrayList<Pessoas> getPeople() {
         return people;
     }
-    
+
     public void addPessoa(Pessoas pes) {
         people.add(pes);
-        System.out.println("Adicionou pessoa");
     }
 
     public Pessoas getPeople(int indice) {
@@ -74,17 +87,53 @@ public class Pessoas {
             System.out.println("Indice incorreto");
         }
     }
-    
+
     public int Random() {
         int n = rand.nextInt(100) + 1;
         return n;
     }
-    
+
+    //getter & add do Obituario
+    public void addObituario(Pessoas dead) {
+        obituario.add(dead);
+    }
+
+    public ArrayList<Pessoas> getObituario() {
+        return obituario;
+    }
+
+    public Pessoas getObituario(int indice) {
+        System.out.println("Pessoa: " + getNomeO(indice) + "    Apelido: " + getApelidoO(indice) + "    Posto: " + getPostoO(indice) + "    Ccld: " + getCcldO(indice));
+        return obituario.get(indice);
+    }
+
+    //getter & add & retira dos Presos
+    public void addPresos(Pessoas lock) {
+        presos.add(lock);
+    }
+
+    public ArrayList<Pessoas> getPresos() {
+        return presos;
+    }
+
+    public Pessoas getPresos(int indice) {
+        System.out.println("Pessoa: " + getNomeP(indice) + "    Apelido: " + getApelidoP(indice) + "    Posto: " + getPostoP(indice) + "    Ccld: " + getCcldP(indice));
+        return presos.get(indice);
+    }
+
+    public void retiraPresos(int indice) {
+        if (indice >= 0 && indice < presos.size()) {
+            presos.remove(indice);
+        } else {
+            System.out.println("Indice incorreto");
+        }
+    }
+
     @Override
     public String toString() {
         String texto;
         texto = "";
-        texto += "nome=" + nome;
+        texto += " nome=" + nome;
         texto += " apelido=" + apelido;
         texto += " posto=" + posto;
         texto += " ccld=" + ccld;
@@ -92,115 +141,225 @@ public class Pessoas {
         texto += " musculo=" + musculo;
         texto += " inteligência=" + inteligência;
         texto += " estratega=" + estratega;
-        texto += " carisma=" + carisma + '}';
+        texto += " carisma=" + carisma;
+        texto += " superior=" + superior + '}';
         return texto;
     }
-    
-    public int getIndice(Pessoas nome){
-        int pos = people.indexOf(nome);
-        //System.out.println(pos);
-        return pos;
+
+    public int getIndice(String nome) {
+        for (int i = 0; i < people.size(); i++) {
+            if (getNome(i).contains(getNome(nome))) {
+                return i;
+            }
+        }
+        System.out.println("Nao foi encontrado nada. :)");
+        return 0;
     }
-    
-    public boolean comparaPosto (String posto) {
+
+    public boolean comparaPosto(String posto) {
         boolean verificado = false;
-        for(int i=0; i<people.size(); i++) {
-            if(getApelido(i).equals(posto)) {
+        for (int i = 0; i < people.size(); i++) {
+            if (getApelido(i).equals(posto)) {
                 verificado = true;
                 break;
-            }
-            else {
+            } else {
                 verificado = false;
             }
         }
         //System.out.println(verificado);
         return verificado;
     }
-    
-    public boolean comparaApelido (String apelido) {
+
+    public boolean comparaApelido(String apelido) {
         boolean verificado = false;
-        for(int i=0; i<people.size(); i++) {
-            if(getApelido(i).equals(apelido)) {
+        for (int i = 0; i < people.size(); i++) {
+            if (getApelido(i).equals(apelido)) {
                 verificado = true;
                 break;
-            }
-            else {
+            } else {
                 verificado = false;
             }
         }
         //System.out.println(verificado);
         return verificado;
     }
-    
+
     public int getCcld(int indice) {
         Pessoas p = new Pessoas();
-        p=people.get(indice);
-        System.out.println(p);
-        this.ccld=p.ccld;
+        p = people.get(indice);
+        this.ccld = p.ccld;
+        return ccld;
+    }
+
+    public int getCcldIndice(int ccld) {
+        for (Pessoas pes : people) {
+            if (people.contains(ccld)) {
+                System.out.println(ccld);
+            }
+        }
         return ccld;
     }
 
     public int getLealdade(int indice) {
         Pessoas p = new Pessoas();
-        p=people.get(indice);
-        this.lealdade=p.lealdade;
+        p = people.get(indice);
+        this.lealdade = p.lealdade;
         return lealdade;
     }
 
     public int getMusculo(int indice) {
         Pessoas p = new Pessoas();
-        p=people.get(indice);
-        this.musculo=p.musculo;
+        p = people.get(indice);
+        this.musculo = p.musculo;
         return musculo;
     }
 
     public int getInteligência(int indice) {
         Pessoas p = new Pessoas();
-        p=people.get(indice);
-        this.inteligência=p.inteligência;
+        p = people.get(indice);
+        this.inteligência = p.inteligência;
         return inteligência;
     }
 
     public int getEstratega(int indice) {
         Pessoas p = new Pessoas();
-        p=people.get(indice);
-        this.estratega=p.estratega;
+        p = people.get(indice);
+        this.estratega = p.estratega;
         return estratega;
     }
 
     public int getCarisma(int indice) {
         Pessoas p = new Pessoas();
-        p=people.get(indice);
-        this.carisma=p.carisma;
+        p = people.get(indice);
+        this.carisma = p.carisma;
         return carisma;
-    } 
-    
-    public String getApelido(int indice){
-        Pessoas p =new Pessoas();
-        p=people.get(indice);
-        this.apelido=p.apelido;
+    }
+
+    public String getApelido(int indice) {
+        Pessoas p = new Pessoas();
+        p = people.get(indice);
+        this.apelido = p.apelido;
+        return apelido;
+    }
+
+    public String getApelido(String apelido) {
+        for (Pessoas pes : people) {
+            if (people.contains(apelido)) {
+                System.out.println(apelido);
+            }
+        }
+        return apelido;
+    }
+
+    public String getNome(int indice) {
+        Pessoas p = new Pessoas();
+        p = people.get(indice);
+        this.nome = p.nome;
+        return nome;
+    }
+
+    public String getNome(String nome) {
+        for (Pessoas pes : people) {
+            if (people.contains(nome)) {
+                System.out.println(nome);
+            }
+        }
+        return nome;
+    }
+
+    public void setPosto(int indice, String posto) {
+        Pessoas p = new Pessoas();
+        p = people.get(indice);
+        p.posto = posto;
+    }
+
+    public String getPosto(int indice) {
+        Pessoas p = new Pessoas();
+        p = people.get(indice);
+        this.posto = p.posto;
+        return posto;
+    }
+
+    public String getPosto(String posto) {
+        for (Pessoas pes : people) {
+            if (people.contains(posto)) {
+                System.out.println(posto);
+            }
+        }
+        return posto;
+    }
+
+    public String getSuperior(int indice) {
+        Pessoas p = new Pessoas();
+        p = people.get(indice);
+        this.superior = superior;
+        return superior;
+    }
+
+    //getter das informações dos Presos
+    public String getNomeP(int indice) {
+        Pessoas p = new Pessoas();
+        p = presos.get(indice);
+        this.nome = p.nome;
+        return nome;
+    }
+
+    public String getApelidoP(int indice) {
+        Pessoas p = new Pessoas();
+        p = presos.get(indice);
+        this.apelido = p.apelido;
         return apelido;
     }
     
-    public String getNome(int indice){
-        Pessoas p =new Pessoas();
-        p=people.get(indice);
-        this.nome=p.nome;
+    public String getPostoP(int indice) {
+        Pessoas p = new Pessoas();
+        p = presos.get(indice);
+        this.posto = p.posto;
+        return posto;
+    }
+
+    public int getCcldP(int indice) {
+        Pessoas p = new Pessoas();
+        p = presos.get(indice);
+        System.out.println(p);
+        this.ccld = p.ccld;
+        return ccld;
+    }
+
+    public String getSuperiorP(int indice) {
+        Pessoas p = new Pessoas();
+        p = presos.get(indice);
+        this.superior = superior;
+        return superior;
+    }
+
+    //getter das informações dos Mortos
+    public String getNomeO(int indice) {
+        Pessoas p = new Pessoas();
+        p = obituario.get(indice);
+        this.nome = p.nome;
         return nome;
     }
-    
-    public String getPosto(int indice){
-        Pessoas p =new Pessoas();
-        p=people.get(indice);
-        this.posto=p.posto;
+
+    public String getPostoO(int indice) {
+        Pessoas p = new Pessoas();
+        p = obituario.get(indice);
+        this.posto = p.posto;
         return posto;
     }
     
-    /*
-    public String getSuperior(int indice){
+    public int getCcldO(int indice) {
         Pessoas p = new Pessoas();
-        p=people.get(indice);
-        this.superior=superior;
-        return superior;
-    }*/
-} 
+        p = obituario.get(indice);
+        this.ccld = p.ccld;
+        return ccld;
+    }
+
+    public String getApelidoO(int indice) {
+        Pessoas p = new Pessoas();
+        p = obituario.get(indice);
+        this.apelido = p.apelido;
+        return apelido;
+    }
+
+}
