@@ -1,8 +1,9 @@
 import java.util.*;
 
-public class UnderBoss{
-    private Pessoas pessoa;
+public class UnderBoss extends Pessoas{
+    
     public void MenuUnderBoss() {
+        Familia fam = new Familia();
         int option = -1;
         Scanner scanchoice = new Scanner(System.in);
         while (option < 1 || option > 5) {
@@ -18,18 +19,20 @@ public class UnderBoss{
         switch (option) {
             case 1:
                 System.out.println("Libertar mafioso:");
-                pessoa = new Pessoas();
-                System.out.println(pessoa.getPeople(1));
+                fam.Menu();
                 break;
             case 2:
                 System.out.println("Período contabilístico:");
+                fam.Menu();
                 break;
             case 3:
                 System.out.println("Loyalty test:");
                 LoyaltyTest();
+                fam.Menu();
                 break;
             case 4:
                 System.out.println("Voltar.");
+                fam.Menu();
             default:
                 System.out.println("Opcao invalida");
         }
@@ -44,6 +47,7 @@ public class UnderBoss{
     public void LoyaltyTest() {
         Mafia maf =new Mafia();
         int fam = maf.MenuMafia();
+        int leal=0;
         String n = "";
         String a = "";
         
@@ -58,11 +62,18 @@ public class UnderBoss{
         } else if (fam == 5) {
             a = "Lucchese";
         }
-        for(int i=0;i<5;i++){
-            //n = getApelido(i);
-            if (n == a) {//Se o apelido for igual ao da familia escolhida
-                
+        for(int i=0;i<getPeople().size();i++){
+            n = getApelido(i);
+            if (n == a) {
+                leal=getLealdade(i);
+                int rand= Random();
+                if(rand>leal){
+                    addObituario(getPeople(i));
+                    System.out.println("Foi encontrado um informador. " + "Pessoa: " + getNome(i) + "  Lealdade: " + getLealdade(i) + " :)");
+                    retiraPessoa(i);
+                }   
             }
         } 
+        System.out.println("-> Não foram encontrados mais informadores.");
     }
 }
