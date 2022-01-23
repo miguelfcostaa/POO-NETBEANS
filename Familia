@@ -1,11 +1,12 @@
+
 import java.util.*;
 
-public class Familia {
-    
+public class Familia extends Pessoas{
+
     public void Menu() {
         Boss boss = new Boss();
-        Consigliere con =new Consigliere();
-        UnderBoss und=new UnderBoss();
+        Consigliere con = new Consigliere();
+        UnderBoss und = new UnderBoss();
         int option = -1;
         Scanner scanchoice = new Scanner(System.in);
         while (option < 1 || option > 5) {
@@ -65,7 +66,7 @@ public class Familia {
             case 1:
                 System.out.println("Retrato de família:");
                 Retrato();
-                //Mafia.MenuMafia();
+                Menu();
                 break;
             case 2:
                 System.out.println("Plano de negócios:");
@@ -78,9 +79,11 @@ public class Familia {
                 break;
             case 5:
                 System.out.println("Obituário:");
+                Obituario();
                 break;
             case 6:
                 System.out.println("Encarcerados:");
+                Encarcerados();
                 break;
             case 7:
                 System.out.println("All out war:");
@@ -95,7 +98,50 @@ public class Familia {
     }
 
     public void Retrato() {
-
+        Mafia maf = new Mafia();
+        int n = 1;
+        int fam = maf.MenuMafia();
+        if (fam == 1) {
+            for (int i = 0; i < getPeople().size(); i++) {
+                if (getApelido(i).contains(getApelido("Bonanno"))) {
+                    System.out.println("(" + n + ") Pessoa: " + getNome(i) + "   Apelido: " + getApelido(i) + "   Posto: " + getPosto(i) + "  CCLD: " + getCcld(i));
+                    n++;
+                }
+            }
+        } else if (fam == 2) {
+            for (int i = 0; i < getPeople().size(); i++) {
+                if (getApelido(i).contains(getApelido("Colombo"))) {
+                    System.out.println("(" + n + ") Pessoa: " + getNome(i) + "   Apelido: " + getApelido(i) + "   Posto: " + getPosto(i) + "  CCLD: " + getCcld(i));
+                    n++;
+                }
+            }
+        } else if (fam == 3) {
+            for (int i = 0; i < getPeople().size(); i++) {
+                if (getApelido(i).contains(getApelido("Gambino"))) {
+                    System.out.println("(" + n + ") Pessoa: " + getNome(i) + "   Apelido: " + getApelido(i) + "   Posto: " + getPosto(i) + "  CCLD: " + getCcld(i));
+                    n++;
+                }
+            }
+        } else if (fam == 4) {
+            for (int i = 0; i < getPeople().size(); i++) {
+                if (getApelido(i).contains(getApelido("Genevese"))) {
+                    System.out.println("(" + n + ") Pessoa: " + getNome(i) + "   Apelido: " + getApelido(i) + "   Posto: " + getPosto(i) + "  CCLD: " + getCcld(i));
+                    n++;
+                }
+            }
+        } else if (fam == 5) {
+            for (int i = 0; i < getPeople().size(); i++) {
+                if (getApelido(i).contains(getApelido("Lucchese"))) {
+                    System.out.println("(" + n + ") Pessoa: " + getNome(i) + "   Apelido: " + getApelido(i) + "   Posto: " + getPosto(i) + "  CCLD: " + getCcld(i));
+                    n++;
+                }
+            }
+        }
+        System.out.println("Obituario:");
+        for (int i = 0; i < getObituario().size(); i++) {
+            System.out.println("(" + n + ") Pessoa: " + getNomeO(i) + "   Apelido: " + getApelidoO(i) +"  CCLD: " + getCcldO(i));
+            n++;
+        }
     }
 
     public void PlanoNegocios() {
@@ -110,9 +156,17 @@ public class Familia {
     }
 
     public void Obituario() {
+        Pessoas p = new Pessoas();
+        for (int i = 0; i < p.getObituario().size(); i++) {
+            getObituario(i);
+        }
     }
 
     public void Encarcerados() {
+        Pessoas p = new Pessoas();
+        for(int i = 0; i<p.getPresos().size();i++){
+            getPresos(i);
+        }
     }
 
     public void AllOfWar() {
