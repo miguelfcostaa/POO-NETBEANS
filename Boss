@@ -1,10 +1,11 @@
+
 import java.util.*;
 import java.util.Scanner;
 
-public class Boss extends Pessoas {
-    
+public class Boss {
+
     public void MenuBoss() {
-        Familia fam=new Familia();
+        Familia fam = new Familia();
         int option = -1;
         Scanner scanchoice = new Scanner(System.in);
         while (option < 1 || option > 6) {
@@ -40,14 +41,13 @@ public class Boss extends Pessoas {
                 break;
             case 4:
                 System.out.println("Gera negócios para caporegime:");
-                
+
                 fam.Menu();
                 break;
             case 5:
                 System.out.println("Nomear consigllieri:");
-                System.out.println(getPeople());
-                MenuNomearCons();
-                //fam.Menu();
+                NomearCons();
+                fam.Menu();
                 break;
             case 6:
                 System.out.println("Voltar");
@@ -62,14 +62,28 @@ public class Boss extends Pessoas {
         Mafia maf = new Mafia();
         
         int fam = maf.MenuMafia();
-        
-        if (b == "Soldier") {
-
-        } else if (b == "capoRegime") {
-
-        } else if (b == "UnderBoss") {
-
+        int n = 1;
+/*
+        if(b=="Soldier"){
+            for (int i = 0; i < pes.getPeople().size(); i++) {
+                if (pes.getPosto(i).contains(pes.getPosto("Caporegime"))) {
+                    System.out.println("(" + n + ") Pessoa: " + pes.getNome(i) + "   Apelido: " + pes.getApelido(i) + "   Posto: " + pes.getPosto(i) + "  CCLD: " + pes.getCcld(i));
+                    n++;
+                }
+            }
+            Scanner c = new Scanner(System.in);
+            System.out.println("Escolher qual o Caporegime quer que seja o superior do Soldier");
+            int m = c.next();
+            m=m-1;
+            String superior = pes.getNome(m);
         }
+        else if(b=="CapoRegime"){
+            
+        }
+        else if(b=="UnderBoss"){
+        
+        }
+*/
         Scanner s = new Scanner(System.in);
         System.out.println("Primeiro Nome:");
         String primeiroNome = s.next();
@@ -79,63 +93,46 @@ public class Boss extends Pessoas {
 
         if (fam == 1) {
             String ultimoNome = "Bonanno";
-            Pessoas a = new Pessoas(primeiroNome, ultimoNome, b, ccld);
         } else if (fam == 2) {
             String ultimoNome = "Colombo";
-            Pessoas a = new Pessoas(primeiroNome, ultimoNome, b, ccld);
         } else if (fam == 3) {
             String ultimoNome = "Gambino";
-            Pessoas a = new Pessoas(primeiroNome, ultimoNome, b, ccld);
         } else if (fam == 4) {
             String ultimoNome = "Genevese";
-            Pessoas a = new Pessoas(primeiroNome, ultimoNome, b, ccld);
         } else if (fam == 5) {
             String ultimoNome = "Lucchese";
-            Pessoas a = new Pessoas(primeiroNome, ultimoNome, b, ccld);
+
         }
+        // Pessoas a = new Pessoas(primeiroNome, ultimoNome, b, ccld);
     }
 
     public void GeraNegCap() {
     }
 
     public void NomearCons() {
-        
-        int n = 1;
-        //if (pessoa.comparaPosto("Associate") == true){
-            for(int i=0; i<getPeople().size(); i++) {
-                System.out.println(n +"Pessoa = " + getNome(i) + "Apelido = " + getApelido(i));
-                System.out.println("6- Voltar.");
-                System.out.println("Qual pertende escolher: ");
-                n++;
-            }
-        //}
-    }
-    public void MenuNomearCons() {
+        Pessoas pessoa = new Pessoas();
         Scanner scanchoice = new Scanner(System.in);
         int option = -1;
-        int n = 1;
-        while (option < 1 || option > 3) {
-            for(int i=0; i<getPeople().size(); i++) {
-                System.out.println(n +" - Pessoa: " + getNome(i) + "      Posto: " + getPosto(i));
+        int n = 0;
+        for (int i = 0; i < pessoa.getPeople().size(); i++) {
+            if (pessoa.getPosto(i).contains(pessoa.getPosto("Associate"))) {
+                System.out.println("(" + n + ") Pessoa: " + pessoa.getNome(i) + "   Apelido: " + pessoa.getApelido(i) + "   Posto: " + pessoa.getPosto(i) + "  CCLD: " + pessoa.getCcld(i));
                 n++;
             }
-            int m = 1 + n;
-            System.out.println( m + "- Voltar.");
-            System.out.println("Qual pertende escolher: ");
-            if (scanchoice.hasNextInt()) {
-                option = scanchoice.nextInt();
-            }   
-            switch (option) {
-                case 1:
-                    System.out.println(n + "Pessoa = " + getNome(1) + "Apelido = " + getApelido(1));    
-                    break;
-                case 2:
-                    Familia fam = new Familia();
-                    fam.Menu();
-                    break;
-                default:
-                    System.out.println("Opcao invalida");    
+        }
+        int m = n;
+        System.out.println("(" + m + ") Voltar.");
+        System.out.println("Qual pertende escolher: ");
+        option = scanchoice.nextInt();
+        if (option != m){
+            if (pessoa.getPosto(option).contains(pessoa.getPosto("Associate"))) {
+                pessoa.setPosto(pessoa.getIndice(pessoa.getNome(option)),"Consigliere");
+                System.out.println("Pessoa: " + pessoa.getNome(option) + "   Apelido: " + pessoa.getApelido(option) + "   Posto: " + pessoa.getPosto(option) + "  CCLD: " + pessoa.getCcld(option));
             }
+        }
+        if (option == m){
+            System.out.println("(" + m + ") Voltar.");
+            MenuBoss();
         }
     }
 }
