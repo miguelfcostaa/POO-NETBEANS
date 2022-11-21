@@ -1,0 +1,27 @@
+"Joseph", "Colombo", "Boss", "20000000", "77","88","78","87","88","null";
+"Critovao", "Colombo", "Consigliere", "20000001", "77","88","78","87","88","Joseph";
+"Cristina", "Colombo", "Underboss", "20000002", "77","88","78","87","88","Joseph";
+"Carlos", "Colombo", "Caporegime", "20000003", "77","99","99","99","100","Cristina";
+"Gorete", "Colombo", "Caporegime", "20000004", "77","98","98","98","100","Cristina";
+"Diogo", "Colombo", "Caporegime", "20000005", "77","61","100","87","88","Cristina";
+"Jessica", "Colombo", "Soldier", "20000006", "77","88","78","87","88","Carlos";
+"Rita", "Colombo", "Soldier", "20000007", "77","88","78","87","88","Carlos";
+"Andreia", "Colombo", "Soldier", "20000008", "77","88","78","87","88","Carlos";
+"Bruno", "Colombo", "Soldier", "20000009", "77","88","78","87","88","Carlos";
+"Tiago", "Colombo", "Soldier", "20000010", "77","88","78","87","88","Carlos";
+"Carla", "Colombo", "Soldier", "20000011", "77","88","78","87","88","Gorete";
+"Rafael", "Colombo", "Soldier", "20000012", "77","88","78","87","88","Gorete";
+"Liliana", "Colombo", "Soldier", "20000013", "77","88","78","87","88","Gorete";
+"Marta", "Colombo", "Soldier", "20000014", "77","88","78","87","88","Gorete";
+"Nuno", "Colombo", "Soldier", "20000015", "77","88","78","87","88","Gorete";
+"Vitor", "Colombo", "Soldier", "20000016", "77","88","78","87","88","Diogo";
+"Jorge", "Colombo", "Soldier", "20000017", "77","88","78","87","88","Diogo";
+"Sofia", "Colombo", "Soldier", "20000018", "77","88","78","87","88","Diogo";
+"Eusebio", "Colombo", "Soldier", "20000019", "77","88","78","87","88","Diogo";
+"Ricardo", "Colombo", "Soldier", "20000020", "77","88","78","87","88","Diogo";
+
+
+
+
+
+

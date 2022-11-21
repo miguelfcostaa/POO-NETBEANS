@@ -1,0 +1,26 @@
+"Joe", "Bonnano", "Boss", 10000000, 77,88,78,87,88,"null"
+"Roger", "Bonnano", "Consigliere", 10000001, 77,88,78,87,88,"Joe"
+"Bruno", "Bonnano", "Underboss", 10000002, 77,88,78,87,88,"Joe"
+"Petroson", "Bonnano", "Caporegime", 10000003, 77,99,99,99,100,"Bruno"
+"Mariaovski", "Bonnano", "Caporegime",10000004,77,98,98,98,"100","Bruno"
+"Inelia", "Bonnano", "Caporegime", 10000005, 77,61,10,87,88,"Bruno"
+"Mortilson", "Bonnano", "Soldier", 10000006, 77,48,70,47,88,"Petrovson"
+"Mardilson", "Bonnano", "Soldier", 10000007, 77,38,78,87,88,"Petrovson"
+"Ensebadilson", "Bonnano", "Soldier", 10000008, 77,88,78,87,88,"Petrovson"
+"Davidilson", "Bonnano", "Soldier", 10000009, 77,88,78,89,88,"Petrovson"
+"Bundanilson", "Bonnano", "Soldier",10000010, 77,88,78,87,88,"Petrovson"
+"Rubenoski", "Bonnano", "Soldier", 10000011, 20,18,18,17,08,"Mariaovski"
+"Luisovski", "Bonnano", "Soldier", 10000012, 77,88,78,87,88,"Mariaovski";
+"Oscarovski", "Bonnano", "Soldier", 10000013, 77,88,78,87,88,"Mariaovski"
+"Tersovski", "Bonnano", "Soldier", 10000014, 77,88,78,87,88,"Mariaovski"
+"Federicaovski", "Bonnano", "Soldier", 10000015, 77,88,78,87,88,"Mariaovski"
+"Gorelia", "Bonnano", "Soldier", 10000016, 77,88,78,87,88,"Inelia"
+"Mardelian", "Bonnano", "Soldier", 10000017, 77,88,78,87,88,"Inelia"
+"Ensebadelia", "Bonnano", "Soldier", 10000018, 77,88,78,87,88,"Inelia"
+"Davelio", "Bonnano", "Soldier", 10000019, 77,88,78,87,88,"Inelia"
+"Bundelio", "Bonnano", "Soldier", 10000020, 77,88,78,87,88,"Inelia"
+
+
+
+
+
